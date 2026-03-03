@@ -77,7 +77,6 @@ function imageTemplate({ preview, original, description }) {
       src="${preview}"
       data-source="${original}"
       alt="${description}"
-			title="${description}"
     />
   </a>
 </li>
@@ -92,6 +91,7 @@ const markup = imagesTemplate(images);
 gallery.innerHTML = markup;
 
 new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
   captionDelay: 250,
   maxZoom: 0,
 });
